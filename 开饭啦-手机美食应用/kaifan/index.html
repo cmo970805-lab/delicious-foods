@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#faf7f1">
+  <meta name="description" content="开饭啦，你的私人菜单。收藏家常菜，自定义菜单，找到今天想吃的一道菜。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>开饭啦 · 我的私人菜单</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <script src="recipes.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#discover" aria-label="开饭啦首页"><span class="brand-mark">饭</span><span>开饭啦<small>好好吃饭，好好生活</small></span></a>
+      <button class="icon-button" id="settings-button" aria-label="备份与安装"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="8" cy="7" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="17" r="2" fill="currentColor"/></svg></button>
+    </header>
+    <main id="main"></main>
+    <footer class="desktop-note">给每一顿饭，一点小期待。</footer>
+  </div>
+  <nav class="bottom-nav" aria-label="主要导航">
+    <a href="#discover" data-tab="discover"><svg viewBox="0 0 24 24"><path d="m12 3 9 7-3 10H6L3 10Z"/><path d="M9 20v-7h6v7"/></svg><span>今天吃什么</span></a>
+    <a href="#menus" data-tab="menus"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 8h6M9 12h6M9 16h4"/></svg><span>我的菜单</span></a>
+    <a href="#favorites" data-tab="favorites"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg><span>我的收藏</span></a>
+  </nav>
+  <dialog id="sheet" class="sheet"><div id="sheet-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <input id="import-file" type="file" accept="application/json,.json" hidden>
+  <noscript><p>请开启浏览器的 JavaScript 来使用开饭啦。</p></noscript>
+</body>
+</html>
